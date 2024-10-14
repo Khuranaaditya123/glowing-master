@@ -6,6 +6,11 @@ COPY . /usr/share/nginx/html
 
 # Set permissions for Nginx to access the files
 RUN chmod -R 755 /usr/share/nginx/html
+# Install Git
+RUN apk add --no-cache git
+
+# Clone the repository (replace the link with your repo)
+RUN git clone https://github.com/username/your-repo.git /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
